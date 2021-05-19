@@ -4,6 +4,7 @@ import {Grid,Paper} from  '@material-ui/core';
 import Typography from '@material-ui/core/Typography';
 import Home from './Home';
 import {useState ,useEffect} from 'react';
+import Footer from './Footer';
 
 
 const useStyles = makeStyles((theme)=>({
@@ -65,15 +66,16 @@ export default function Total() {
   const [data, setData] = useState([]);
   const [state,setState] = useState([]);
   const [states,setStates] = useState([]);
+  const [statess,setStatess] = useState([]);
   const getCovidData = async ()=>{
 
     try {
     const response = await fetch("https://api.covid19india.org/data.json");
     const actualData = await response.json();
-    console.log(actualData);
     setData(actualData.statewise[0]);
     setState(actualData.statewise[37]);
     setStates(actualData.statewise[5]);
+    setStatess(actualData.statewise[33]);
       
     } catch (error) {
       console.log(error);
@@ -84,7 +86,8 @@ export default function Total() {
     getCovidData();
   }, [])
     return (
-        <div>
+        <React.Fragment>
+        <div style={{marginBottom:'30px'}}>
         <Typography variant="h2" noWrap className={classes.heading}>
             Covid19 Cases
             <br/>
@@ -111,6 +114,15 @@ export default function Total() {
         <Grid item  xs="12" md="3">
             <Paper className={classes.paper}><Home data={data.deaths} update={data.lastupdatedtime} head="Total Deaths"/></Paper>
         </Grid>
+        <Grid item  className={classes.item} xs="12" md="4">
+            <Paper className={classes.paper}><Home data={data.deltaconfirmed} update={data.lastupdatedtime} head="New Cases" /></Paper>
+        </Grid>     
+        <Grid item  xs="12" md="4">
+            <Paper className={classes.paper}><Home data={data.deltarecovered} update={data.lastupdatedtime} head="Today Recovered"/></Paper>
+        </Grid>
+        <Grid item  xs="12" md="4">
+            <Paper className={classes.paper}><Home data={data.deltadeaths} update={data.lastupdatedtime} head="Today Deaths"/></Paper>
+        </Grid>
         </Grid>
         <Typography variant="h3" noWrap className={classes.heading1}>
             West Bengal
@@ -130,6 +142,15 @@ export default function Total() {
         <Grid item  xs="12" md="3">
             <Paper className={classes.paper}><Home data={state.deaths} update={state.lastupdatedtime} head="Total Deaths"/></Paper>
         </Grid>
+        <Grid item  className={classes.item} xs="12" md="4">
+            <Paper className={classes.paper}><Home data={state.deltaconfirmed} update={state.lastupdatedtime} head="New Cases" /></Paper>
+        </Grid>     
+        <Grid item  xs="12" md="4">
+            <Paper className={classes.paper}><Home data={state.deltarecovered} update={state.lastupdatedtime} head="Today Recovered"/></Paper>
+        </Grid>
+        <Grid item  xs="12" md="4">
+            <Paper className={classes.paper}><Home data={state.deltadeaths} update={state.lastupdatedtime} head="Today Deaths"/></Paper>
+        </Grid>
         </Grid>
         <Typography variant="h3" noWrap className={classes.heading1}>
             Bihar
@@ -138,18 +159,57 @@ export default function Total() {
         </Typography>
         <Grid container spacing={2} className={classes.grid}>
         <Grid item  className={classes.item} xs="12" md="3">
-            <Paper className={classes.paper}><Home data={states.confirmed} update={state.lastupdatedtime} head="Total Cases" /></Paper>
+            <Paper className={classes.paper}><Home data={states.confirmed} update={states.lastupdatedtime} head="Total Cases" /></Paper>
         </Grid>
         <Grid item  xs="12" md="3">
-            <Paper className={classes.paper}><Home data={states.active} update={state.lastupdatedtime} head="Active Cases"/></Paper>
+            <Paper className={classes.paper}><Home data={states.active} update={states.lastupdatedtime} head="Active Cases"/></Paper>
         </Grid>      
         <Grid item  xs="12" md="3">
-            <Paper className={classes.paper}><Home data={states.recovered} update={state.lastupdatedtime} head="Total Recovered"/></Paper>
+            <Paper className={classes.paper}><Home data={states.recovered} update={states.lastupdatedtime} head="Total Recovered"/></Paper>
         </Grid>
         <Grid item  xs="12" md="3">
-            <Paper className={classes.paper}><Home data={states.deaths} update={state.lastupdatedtime} head="Total Deaths"/></Paper>
+            <Paper className={classes.paper}><Home data={states.deaths} update={states.lastupdatedtime} head="Total Deaths"/></Paper>
+        </Grid>
+        <Grid item  className={classes.item} xs="12" md="4">
+            <Paper className={classes.paper}><Home data={states.deltaconfirmed} update={states.lastupdatedtime} head="New Cases" /></Paper>
+        </Grid>     
+        <Grid item  xs="12" md="4">
+            <Paper className={classes.paper}><Home data={states.deltarecovered} update={states.lastupdatedtime} head="Today Recovered"/></Paper>
+        </Grid>
+        <Grid item  xs="12" md="4">
+            <Paper className={classes.paper}><Home data={states.deltadeaths} update={states.lastupdatedtime} head="Today Deaths"/></Paper>
+        </Grid>
+        </Grid>
+        <Typography variant="h3" noWrap className={classes.heading1}>
+            Telengana
+            <br/>
+            <span style={{fontSize:'0.7em',fontWeight:'500'}}>Covid19 Cases</span>
+        </Typography>
+        <Grid container spacing={2} className={classes.grid}>
+        <Grid item  className={classes.item} xs="12" md="3">
+            <Paper className={classes.paper}><Home data={statess.confirmed} update={statess.lastupdatedtime} head="Total Cases" /></Paper>
+        </Grid>
+        <Grid item  xs="12" md="3">
+            <Paper className={classes.paper}><Home data={statess.active} update={statess.lastupdatedtime} head="Active Cases"/></Paper>
+        </Grid>      
+        <Grid item  xs="12" md="3">
+            <Paper className={classes.paper}><Home data={statess.recovered} update={statess.lastupdatedtime} head="Total Recovered"/></Paper>
+        </Grid>
+        <Grid item  xs="12" md="3">
+            <Paper className={classes.paper}><Home data={statess.deaths} update={statess.lastupdatedtime} head="Total Deaths"/></Paper>
+        </Grid>
+        <Grid item  className={classes.item} xs="12" md="4">
+            <Paper className={classes.paper}><Home data={statess.deltaconfirmed} update={statess.lastupdatedtime} head="New Cases" /></Paper>
+        </Grid>     
+        <Grid item  xs="12" md="4">
+            <Paper className={classes.paper}><Home data={statess.deltarecovered} update={statess.lastupdatedtime} head="Today Recovered"/></Paper>
+        </Grid>
+        <Grid item  xs="12" md="4">
+            <Paper className={classes.paper}><Home data={statess.deltadeaths} update={statess.lastupdatedtime} head="Today Deaths"/></Paper>
         </Grid>
         </Grid>
         </div>
+        <Footer/>
+        </React.Fragment>
     );
 }
