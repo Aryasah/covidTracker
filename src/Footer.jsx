@@ -66,10 +66,10 @@ export default function Footer() {
         <Grid item  xs="12" md="6">
             <Paper className={classes.paper}>
                 <div className={classes.fright}>
-                <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                <a href="https://www.facebook.com/arya.sah.98892"><i class="fa fa-facebook" aria-hidden="true"></i></a>
                     <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-                    <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
-                    <a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                    <a href="https://www.instagram.com/aryasah30/"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                    <a href="https://www.linkedin.com/in/arya-sah-5100121b3/"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
                 </div>
             </Paper>
         </Grid>      
