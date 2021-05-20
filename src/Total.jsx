@@ -114,15 +114,6 @@ export default function Total() {
         <Grid item  xs="12" md="3">
             <Paper className={classes.paper}><Home data={data.deaths} update={data.lastupdatedtime} head="Total Deaths"/></Paper>
         </Grid>
-        <Grid item  className={classes.item} xs="12" md="4">
-            <Paper className={classes.paper}><Home data={data.deltaconfirmed} update={data.lastupdatedtime} head="New Cases" /></Paper>
-        </Grid>     
-        <Grid item  xs="12" md="4">
-            <Paper className={classes.paper}><Home data={data.deltarecovered} update={data.lastupdatedtime} head="Today Recovered"/></Paper>
-        </Grid>
-        <Grid item  xs="12" md="4">
-            <Paper className={classes.paper}><Home data={data.deltadeaths} update={data.lastupdatedtime} head="Today Deaths"/></Paper>
-        </Grid>
         </Grid>
         <Typography variant="h3" noWrap className={classes.heading1}>
             West Bengal
@@ -141,15 +132,6 @@ export default function Total() {
         </Grid>
         <Grid item  xs="12" md="3">
             <Paper className={classes.paper}><Home data={state.deaths} update={state.lastupdatedtime} head="Total Deaths"/></Paper>
-        </Grid>
-        <Grid item  className={classes.item} xs="12" md="4">
-            <Paper className={classes.paper}><Home data={state.deltaconfirmed} update={state.lastupdatedtime} head="New Cases" /></Paper>
-        </Grid>     
-        <Grid item  xs="12" md="4">
-            <Paper className={classes.paper}><Home data={state.deltarecovered} update={state.lastupdatedtime} head="Today Recovered"/></Paper>
-        </Grid>
-        <Grid item  xs="12" md="4">
-            <Paper className={classes.paper}><Home data={state.deltadeaths} update={state.lastupdatedtime} head="Today Deaths"/></Paper>
         </Grid>
         </Grid>
         <Typography variant="h3" noWrap className={classes.heading1}>
@@ -170,15 +152,6 @@ export default function Total() {
         <Grid item  xs="12" md="3">
             <Paper className={classes.paper}><Home data={states.deaths} update={states.lastupdatedtime} head="Total Deaths"/></Paper>
         </Grid>
-        <Grid item  className={classes.item} xs="12" md="4">
-            <Paper className={classes.paper}><Home data={states.deltaconfirmed} update={states.lastupdatedtime} head="New Cases" /></Paper>
-        </Grid>     
-        <Grid item  xs="12" md="4">
-            <Paper className={classes.paper}><Home data={states.deltarecovered} update={states.lastupdatedtime} head="Today Recovered"/></Paper>
-        </Grid>
-        <Grid item  xs="12" md="4">
-            <Paper className={classes.paper}><Home data={states.deltadeaths} update={states.lastupdatedtime} head="Today Deaths"/></Paper>
-        </Grid>
         </Grid>
         <Typography variant="h3" noWrap className={classes.heading1}>
             Telengana
@@ -198,15 +171,7 @@ export default function Total() {
         <Grid item  xs="12" md="3">
             <Paper className={classes.paper}><Home data={statess.deaths} update={statess.lastupdatedtime} head="Total Deaths"/></Paper>
         </Grid>
-        <Grid item  className={classes.item} xs="12" md="4">
-            <Paper className={classes.paper}><Home data={statess.deltaconfirmed} update={statess.lastupdatedtime} head="New Cases" /></Paper>
-        </Grid>     
-        <Grid item  xs="12" md="4">
-            <Paper className={classes.paper}><Home data={statess.deltarecovered} update={statess.lastupdatedtime} head="Today Recovered"/></Paper>
-        </Grid>
-        <Grid item  xs="12" md="4">
-            <Paper className={classes.paper}><Home data={statess.deltadeaths} update={statess.lastupdatedtime} head="Today Deaths"/></Paper>
-        </Grid>
+
         </Grid>
         </div>
         <Footer/>
